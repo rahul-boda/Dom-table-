@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+     <div class="tableBox"></div>
+<script>
+      
+        const data = [
+            { id: 1, name: "Rahul", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good+",technical:"good",Aptitude:"50%"},
+            { id: 2, name: "vishn", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good+",technical:"good",Aptitude:"50%"}, 
+            { id: 3, name: "Vijay", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good",technical:"good",Aptitude:"50%" }, 
+            { id: 4, name: "karthik", batch: "22r", course: "Full Stack",mock:"Uncleared",communication:"good",technical:"Notbad",Aptitude:"90%"},
+            { id: 5, name: "venkatesh", batch: "22r", course: "Full Stack",mock:"Uncleared",communication:"good+",technical:"good+",Aptitude:"50%"},
+            { id: 6, name: "laxman", batch: "22r", course: "Full Stack",mock:"Uncleared",communication:"good",technical:"good",Aptitude:"50%"}, 
+            { id: 7, name: "Eshwar", batch: "22r", course: "Full Stack",mock:"Uncleared",communication:"good",technical:"intermidiate",Aptitude:"50%" }, 
+            { id: 8, name: "Harika", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good",technical:"intermidiate",Aptitude:"90%"},
+            { id: 9, name: "Anusha", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good",technical:"intermidiate",Aptitude:"80%"},
+            { id: 10, name: "Roshan", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good+",technical:"good+",Aptitude:"80%"}, 
+            { id: 11, name: "Arvind", batch: "22r", course: "Full Stack",mock:"cleared",communication:"good",technical:"intermidiate",Aptitude:"50%" }, 
+            { id: 12, name: "Meeraz", batch: "22r", course: "Full Stack",mock:"Uncleared",communication:"good",technical:"intermidiate",Aptitude:"50%"},
+          ];
+        const tableContainer = document.querySelector(".tableBox")
+        const table = document.createElement("table");
+        const thead = document.createElement("thead")
+        const tbody = document.createElement("tbody")
+        const tableHeadingRow = document.createElement("tr");
+        
+
+        const headers = [];
+        for( const keys in data[0]){
+            headers.push(keys)
+        }
+        //applying styles to table
+        table.style.border = "2px solid #000";
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+        
+
+        for( const header of headers){
+            const th = document.createElement("th")
+            th.textContent = header[0].toUpperCase() + header.slice(1) 
+             // Set header styles
+             th.style.backgroundColor = "#bae8e8";
+            th.style.padding = "10px";
+            th.style.textAlign = "left";
+            th.style.border = "1px solid #000000";
+            tableHeadingRow.appendChild(th)
+        }
+
+        for(const objs of data){
+            const tableDataRows = document.createElement("tr")
+            for(key in objs){
+                const td = document.createElement("td")
+                td.textContent = objs[key]
+                // applying styles to table data
+                td.style.padding = "10px";
+                td.style.textAlign = "left";
+                td.style.border = "1px solid #000";
+                td.style.borderCollapse="collapse"
+                td.style.backgroundColor=" #fafafa"
+                tableDataRows.appendChild(td)
+            }
+            tbody.appendChild(tableDataRows)
+        }
+
+        thead.appendChild(tableHeadingRow);
+        table.appendChild(thead)
+        table.appendChild(tbody)
+
+        tableContainer.appendChild(table)
+
+        
+      
+
+        
+
+    </script>
+</body>
+</html>
