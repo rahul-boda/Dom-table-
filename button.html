@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1"> click here to login </button>
+    <button id="button2"> click me to talk</button>
+    <script>
+
+         btn1=document.querySelector("#button1")
+         btn2=document.querySelector("#button2")
+        
+         btn1.addEventListener("click",(a)=>{alert("button 1 is clicked")})
+         btn2.addEventListener("click",(a)=>{alert("button 2 is clicked")})
+
+        btn1.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+
+        btn1.addEventListener("click", function(a){alert(a.srcElement.textcontent)})
+        btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+
+
+         
+    </script>
+</body>
+</html>

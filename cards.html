@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let names=[ "Royl Enfield",
+                   "Yamaha",
+                   "yamaha RACER ",
+                    "Hayabusa" ,
+                   "Royal Enfield",
+                  "Trimph",
+                  " Indian Bobber",
+                  "Yamaha R15",
+                  "Jawa perak",
+                  "Kawasaki Ninja",
+                  "Harley devidson",
+                  " MT 15",
+                  "Harley devidson",
+                 " Vitpilen 250",
+                " BMW Racer",
+               " NS 200",
+               "Vitpilen Racer",
+               "Vitpilen  450 Racer",
+              " Appachchi 310",
+             " Aprilia 457"];
+               
+             let rates=["3.5L","2.5L", "3.8L","20L","2.5L","3L","6.5L","3.2L","4L","7L","15.2L","4.2L","22.2L","4L","5.7L","2.3L","4.5L","5.5L","4.8L","5.2L"]
+              
+              const imageNames = ['b1.webp', 'b2.webp','b3.jpg','b4.jpg','b5.jpg','b6.jpg','b7.png','b8.jpg','b9.jpg','b10.jpg','b11.jpg','b12.webp','b13.jpg','b14.jpg','b15.webp','b16.jpg','b17.jpg','b18.jpg','b19.jpg','b20.jpg' ];
+
+
+             let container = document.createElement("div");
+             document.body.appendChild(container);
+             container.style.textAlign = "center";
+
+             function createElement(i=1, names, rates){
+                //elements
+                let card = document.createElement("div");
+                let title = document.createElement("h3");
+                let rate = document.createElement("p");
+                let img = document.createElement("img");
+
+                //content
+                let head = document.createTextNode(names);
+                let ranke = document.createTextNode(rates);
+                
+                img.src = `imageNames/b${i}.jpg;`
+              
+
+                title.appendChild(head);
+                rate.appendChild(ranke);
+                //style
+                card.style.width="200px";
+                // image.style.width="100%";
+                // image.style.height="300px";
+                
+                card.style.background = "#4567";
+                card.style.color = "#fff";
+                card.style.padding = "10px";
+                card.style.margin = "25px";
+                card.style.display = " inline-block";
+
+                card.appendChild(title);
+                card.appendChild(rate);
+                card.appendChild(img);
+                container.appendChild(card);
+
+             }
+
+            for (let i=0; i < 20 ; i++){
+                createElement(i + 1 , names[i],rates[i])
+            }
+
+
+    </script>
+    </body>
+</html>
