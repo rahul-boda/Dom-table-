@@ -9,18 +9,31 @@
     <button id="button1"> click here to login </button>
     <button id="button2"> click me to talk</button>
     <script>
+        // Why events?
+        // In the web development process, events refer to user actions, such as such as
+        // clicking a button, minimizing the browser window, or submitting a form.
+        // Event handling in JavaScript and JavaScript frameworks allows us to respond to 
+        // user actions and interactions and create dynamic and interactive websites.
+
+        // what is events?
+        // A JavaScript event is a specific action that occurs within a web page or application, 
+        // such as clicking on an element, moving the mouse, pressing a key, or loading a page.
+
+
 
          btn1=document.querySelector("#button1")
          btn2=document.querySelector("#button2")
         
          btn1.addEventListener("click",(a)=>{alert("button 1 is clicked")})
-         btn2.addEventListener("click",(a)=>{alert("button 2 is clicked")})
+        //  btn2.addEventListener("click",(a)=>{alert("button 2 is clicked")})
 
-        btn1.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
-        btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        // btn1.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        // btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
 
-        btn1.addEventListener("click", function(a){alert(a.srcElement.textcontent)})
-        btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        // btn1.addEventListener("click", function(a){alert(a.srcElement.textcontent)})
+        // btn2.addEventListener("click",(a)=>{alert(`${a.srcElement.textcontent}`)})
+
+
 
 
          
