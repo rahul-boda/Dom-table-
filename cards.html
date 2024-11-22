@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script>
+
+<script>
         let names=[ "Royl Enfield",
                    "Yamaha",
                    "yamaha RACER ",
@@ -30,8 +30,14 @@
              " Aprilia 457"];
                
              let rates=["3.5L","2.5L", "3.8L","20L","2.5L","3L","6.5L","3.2L","4L","7L","15.2L","4.2L","22.2L","4L","5.7L","2.3L","4.5L","5.5L","4.8L","5.2L"]
-              
-              const imageNames = ['b1.webp', 'b2.webp','b3.jpg','b4.jpg','b5.jpg','b6.jpg','b7.png','b8.jpg','b9.jpg','b10.jpg','b11.jpg','b12.webp','b13.jpg','b14.jpg','b15.webp','b16.jpg','b17.jpg','b18.jpg','b19.jpg','b20.jpg' ];
+             let imageUrls = [
+            'https://rukminim2.flixcart.com/image/850/1000/kx7vc7k0/poster/q/c/c/large-harley-davidson-bike-waterproof-vinyl-sticker-poster-24-original-imag9qfwhsqb6yfk.jpeg?q=90&crop=false',
+            'https://imgd.aeplcdn.com/1280x720/n/cw/ec/123865/g310-rr-right-front-three-quarter-2.jpeg?isig=0',
+            'https://rukminim2.flixcart.com/image/850/1000/l4ln8nk0/electric-ride-on/n/h/s/kids-baby-electric-bike-battery-operated-bike-for-kids-baybee-original-imagfguq8tgnnauw.jpeg?q=20&crop=false'
+        ];
+             
+             let button1=["Buy Now"]
+            //   const imageNames = ['b3.jpg','b4.jpg','b5.jpg','b6.jpg','b8.jpg','b9.jpg','b10.jpg','b11.jpg','b13.jpg','b14.jpg','b16.jpg','b17.jpg','b18.jpg','b19.jpg','b20.jpg' ];
 
 
              let container = document.createElement("div");
@@ -44,21 +50,38 @@
                 let title = document.createElement("h3");
                 let rate = document.createElement("p");
                 let img = document.createElement("img");
-
+                let btn1 = document.createElement("button")
+                // btn1=document.getElementsByTagName("button")
+                
                 //content
                 let head = document.createTextNode(names);
                 let ranke = document.createTextNode(rates);
-                
-                img.src = `imageNames/b${i}.jpg;`
-              
+                let bun = document.createTextNode(button1);
+                // let images =document.createTextNode(imageUrls)
+                // img.src = "https://stat.overdrive.in/wp-content/odgallery/2022/08/63812_2022_Honda_CB300F_DLX_PRO_1_468x263.jpg"
+                img.src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1661764705.jpg"
+                //    img.src=`imageNames/b${i}.jpg`;
+                // imageUrls.forEach(url => {  
+                // const img = document.createElement('img');
+                // img.src = url;
+                // img.alt = 'Image';
+                // card.appendChild(img);
+                // img.style.width="100%";
+                // img.style.height="200px";
+                // })
+
+
+
+                btn1.addEventListener("click",(a)=>{alert("Thank you!!")})
 
                 title.appendChild(head);
                 rate.appendChild(ranke);
+                btn1.appendChild(bun);
+               
                 //style
                 card.style.width="200px";
-                // image.style.width="100%";
-                // image.style.height="300px";
-                
+                img.style.width="100%";
+                img.style.height="200px";
                 card.style.background = "#4567";
                 card.style.color = "#fff";
                 card.style.padding = "10px";
@@ -68,12 +91,13 @@
                 card.appendChild(title);
                 card.appendChild(rate);
                 card.appendChild(img);
+                card.appendChild(btn1);
                 container.appendChild(card);
 
              }
 
             for (let i=0; i < 20 ; i++){
-                createElement(i + 1 , names[i],rates[i])
+                createElement(i + 1 , names[i],rates[i],)
             }
 
 

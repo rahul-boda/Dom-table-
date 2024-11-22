@@ -6,17 +6,45 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="button1"> click here to login </button>
-    <button id="button2">click here!</button>
+    <!-- <button id="button1"> click here to login </button>
+    <button id="button2">click here!</button> -->
+    <div id="image-container"></div>
    
     <script>
         
-        btn1=document.querySelector("#button1").addEventListener("click",(a)=>{alert(`${a.target.textContent}`)})
-        btn2=document.querySelector("#button2").addEventListener("click",(a)=>{alert(`${a.target.textContent}`)})
+        // btn1=document.querySelector("#button1").addEventListener("click",(a)=>{alert(`${a.target.textContent}`)})
+        // btn2=document.querySelector("#button2").addEventListener("click",(a)=>{alert(`${a.target.textContent}`)})
 
-        btn1=document.querySelector("#button1").addEventListener("click",(a)=>{alert("no more login bye!!")})
-        btn2=document.querySelector("#button2").addEventListener("click",(a)=>{alert("login!!")})
+        // btn1=document.querySelector("#button1").addEventListener("click",(a)=>{alert("no more login bye!!")})
+        // btn2=document.querySelector("#button2").addEventListener("click",(a)=>{alert("login!!")})
+        
 
+
+    // Array of image URLs
+    const imageUrls = [
+        'https://rukminim2.flixcart.com/image/850/1000/kx7vc7k0/poster/q/c/c/large-harley-davidson-bike-waterproof-vinyl-sticker-poster-24-original-imag9qfwhsqb6yfk.jpeg?q=90&crop=false',
+            'https://imgd.aeplcdn.com/1280x720/n/cw/ec/123865/g310-rr-right-front-three-quarter-2.jpeg?isig=0',
+            'https://rukminim2.flixcart.com/image/850/1000/l4ln8nk0/electric-ride-on/n/h/s/kids-baby-electric-bike-battery-operated-bike-for-kids-baybee-original-imagfguq8tgnnauw.jpeg?q=20&crop=false'
+    ];
+
+    // Get the parent container where images will be added
+    const container = document.getElementById('image-container');
+
+    // Loop through the image URLs
+    imageUrls.forEach(url => {
+        // Create an <img> element for each URL
+        const img = document.createElement('img');
+        img.src = url;  // Set the source of the image
+        img.alt = 'Image';  // Set alt text for accessibility
+        img.style.margin = '10px'; // Optional styling
+        // img.style.width="100%";
+        // img.style.height="200px";
+        // img.style.display = " inline-block";
+
+        // Append the image to the container
+        container.appendChild(img);
+    });
+</script>
 
          
     </script>
