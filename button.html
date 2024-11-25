@@ -6,9 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="button1"> click here to login </button>
+    <h2>Buttons</h2>
+    <button id="button1">  double click to login </button>
     <button id="button2"> click me to talk</button>
+    <hr>
+    <h2> Mouse events</h2>
+    <button id="buy">BUY NOW!</button>
+    <button id="buy1">1BUY NOW! hurry up</button>
+    <button id="buy2">bye !!!!</button>
+    <button id="buy3">mouse up!</button>
+    <button id="buy4">mouse Down!</button>
+    <hr>
+    <h2>key board events</h2>
+    <input type="text" id="name" name="name">
+    
+
     <script>
+        //        1) Why is click events?    
+        // A click event in JavaScript is triggered when a user clicks on an HTML element,
+        // typically using a mouse button (left, right, or middle), or other input devices like touchscreens. 
+        // It is one of the most commonly used events in web development for creating interactive features.
+
+                // 2) Why is mouse events?
+        // Mouse events are a type of event in programming that occur when a user interacts with a mouse device, 
+         // such as clicking, moving, or pressing buttons. These events are commonly used in graphical user interfaces 
+        // (GUIs) to trigger actions or behaviors in response to user actions.
+
+        //         3) what is key board events? 
+        // Keyboard events are events that occur when a user interacts with a keyboard.
+        // These events are triggered when keys are pressed, released, or held down. 
+        // In web development and other applications, keyboard events are used to capture user input,
+        // enabling functionality like typing, navigation, and shortcuts.
+
+
+
         // Why events?
         // In the web development process, events refer to user actions, such as such as
         // clicking a button, minimizing the browser window, or submitting a form.
@@ -18,20 +49,63 @@
         // what is events?
         // A JavaScript event is a specific action that occurs within a web page or application, 
         // such as clicking on an element, moving the mouse, pressing a key, or loading a page.
+       
+    
+                mouse=document.getElementById("buy")
+        mouse.addEventListener("mouseover", ()=>{
+            const colors=["red","bule","green","orange","yellow"];
+            const randomColor = colors[Math.floor(Math.random()* colors.length)]
+            document.body.style.backgroundColor=randomColor
+        })
+
+        mouse1=document.getElementById("buy1")
+        mouse1.addEventListener("mouseenter",()=>{
+            const colors=["red","pink","grey","brown","viotel"];
+            const randomColor = colors[Math.floor(Math.random()* colors.length)]
+            document.body.style.backgroundColor=randomColor
+        })
+
+        mouse2=document.getElementById("buy2")
+        mouse2.addEventListener("mouseleave",()=>{
+            const colors=["aqua","amber","pale-yellow","teal","lime"];
+            const randomColor = colors[Math.floor(Math.random()* colors.length)]
+            document.body.style.backgroundColor=randomColor
+        })
+
+        mouse3=document.getElementById("buy3")
+        mouse3.addEventListener("mouseup",()=>{
+            const colors=["red","green","purple","khaki","blue"];
+            const randomColor = colors[Math.floor(Math.random()* colors.length)]
+            document.body.style.backgroundColor=randomColor
+        })
+
+        mouse4=document.getElementById("buy4")
+        mouse4.addEventListener("mousedown",()=>{
+            const colors=["pink","indigo","cyan","sand","orange"];
+            const randomColor = colors[Math.floor(Math.random()* colors.length)]
+            document.body.style.backgroundColor=randomColor
+        })
 
 
-
-         btn1=document.querySelector("#button1")
+        btn1=document.querySelector("#button1")
          btn2=document.querySelector("#button2")
         
-         btn1.addEventListener("click",(a)=>{alert("button 1 is clicked")})
-         btn2.addEventListener("click",(a)=>{alert("button 2 is clicked")})
+         btn1.addEventListener("dblclick",(a)=>{alert("button 1 is clicked")})
+         btn2.addEventListener("click",(a)=>{alert(" sorry, im busy!")})
 
-        btn1.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
-        btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        // btn1.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
+        // btn2.addEventListener("click",(a)=>{alert(`${a.target.textcontent}`)})
 
-        btn1.addEventListener("click", function(a){alert(a.srcElement.textcontent)})
-        btn2.addEventListener("click",(a)=>{alert(`${a.srcElement.textcontent}`)})
+        // btn1.addEventListener("click", function(a){alert(a.srcElement.textcontent)})
+        // btn2.addEventListener("click",(a)=>{alert(`${a.srcElement.textcontent}`)})
+        //    btn1.addEventListener("click",()=>{alert("good")})
+
+        // const name1 = document.getElementById("name")
+        //      name.addEventListener("keypres",function (event){ 
+        //         if (event.key === "Enter") {
+        //         alert("Enter key was pressed!");
+        //     }
+        //         })
 
 
 
