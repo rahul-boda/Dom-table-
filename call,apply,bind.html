@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // cALL()
+let nameObj = {
+    name: "Tony"
+}
+let PrintName = {
+    name: "Rahul",
+    sayHi: function (age) {
+        console.log(this.name + " age is " + age);
+        }
+}
+PrintName.sayHi.call(PrintName, 25);
+
+let Obj1 = {
+    name:"Rahul"
+}
+
+let Obj2 = {
+    name:"Jhon",
+   move: function (place){
+        console.log(this.name + " from " + place );
+    }
+}
+Obj2.move.call(Obj1,"Warangal")
+
+  // Apply()
+   let Object1 = {
+     name:"John",
+     age: 30,
+   
+    nav:function(a,b){
+        console.log(`Hi im ${this.name}! age ${a} i love to make ${b}`)
+       }
+   }
+   let Object2 = {
+    name:"Rahul"
+    
+   }
+   console.log(Object1.nav.apply(Object2,[25, "relationships!!"]))
+
+//    Bind
+let inp1 = {
+     name:"John",
+     age: 30,
+   
+    nav:function(a,b){
+        console.log(`Hi im ${this.name}! i have make more than ${a} films, i love to make ${b}`)
+       }
+   }
+   let inp2 = {
+    name:"Rahul"
+    
+   }
+
+   var bounce=inp1.nav.bind(inp2,25,"movies")
+//    console.log(Object1.nav.apply(Object2,[25, "relationships!!"]))
+   console.log(bounce())
+
+
+
+
+
+
+    </script>
+</body>
+</html>
