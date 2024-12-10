@@ -6,64 +6,241 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- <button class="click">Click me</button> -->
+    <!-- <button class="btn">click</button> -->
     <script>
+// 1) task
 
-        // cALL()
-let nameObj = {
-    name: "Tony"
-}
-let PrintName = {
-    name: "Rahul",
-    sayHi: function (age) {
-        console.log(this.name + " age is " + age);
-        }
-}
-PrintName.sayHi.call(PrintName, 25);
 
-let Obj1 = {
-    name:"Rahul"
-}
+// let object = {
+//     name:"Rahul",
+// }
+// let printName ={
+//    name:"Jhon",
+//    sayHello: function(age){
+//     console.log(this.name + " age is " +age)
+//    }
+// }
+// printName.sayHello("30")
+// printName.sayHello.call(object,"30")
 
-let Obj2 = {
-    name:"Jhon",
-   move: function (place){
-        console.log(this.name + " from " + place );
+// // // 2)task
+//       const calculator = {
+//     value: 10,
+//     add: function () {
+//         return this.value + 5;
+//     },
+//     subtract:()  => {       
+//        return this.value - 5;
+//     }
+
+// };
+// addition = calculator.add();
+// console.log("After Adding:",addition)
+
+// subtraction = calculator.subtract();
+// console.log("After subtract:",subtraction)
+
+// // 3)task
+
+// let button=document.getElementsByClassName("btn")
+// button.addEventListener("Click",function(){
+//  console.log('this is ',this)
+// })
+
+// let button2=document.getElementsByClassName("btn")
+// button2.addEventListener("Click",(event) =>{
+//  console.log('this is ',this)
+// })
+
+// //4)
+// const car = {
+//     brand: "toyota",
+
+//     startEngine: function() {
+//         console.log(`starting the engine of ${this.brand}`)
+//     }
+// };
+// const bike = {
+//     brand:"yamaha"
+// }
+// car.startEngine.call(bike)
+
+
+//5)
+// const mathOperation= {
+// sum: function (a,b){
+//    return a + b;
+// }
+// };
+
+// const number = [5 , 10]
+
+// results= mathOperation.sum.apply(null, number)
+// console.log(`the sum of two number is ${results}`)
+ 
+//6)
+// const counter = {
+//     count: 0,
+//     increment: function() {
+//         this.count++;
+//         console.log(`updated count: ${this.count}`);
+//     }
+//   };
+// const boundIncrement = counter.increment.bind(counter);
+// boundIncrement();
+// boundIncrement();
+// boundIncrement();
+// boundIncrement();
+
+//7)
+// const timer = {
+//     name: 'Countdown Timer',
+//     start: function() {
+//         setTimeout(function() {
+//             console.log(`Timer [${this.name}] started!`);
+//         }.bind(this), 2000); 
+//     }
+// };
+
+// timer.start();
+
+//8)
+// const rectangle = {
+//     length: 10,
+//     width:5
+//                  };
+// const circle = {
+//     radius:7
+// }
+// function calculateArea() {
+//     if(this.length && this.width ){
+//         return this.length * this.width ;
+//     } else if (this.radius){
+//         return Math.PI * this.radius ** 2;
+//     } else{
+//         return 0
+//     }
+// }
+ 
+// const rectangularArea= calculateArea.call(rectangle)
+// console.log(` Rectangular Area: ${rectangularArea}`)
+
+// const circulararArea= calculateArea.call(circle)
+// console.log(`Circular  Area: ${circulararArea}`)  
+
+
+//9)
+// Step 1: Create the Employee class
+class Employee {
+    constructor(name, designation) {
+        this.name = name;
+        this.designation = designation;
+    }
+
+    introduce() {
+        console.log(`Hi, I am ${this.name}, a ${this.designation}.`);
     }
 }
-Obj2.move.call(Obj1,"Warangal")
 
-  // Apply()
-   let Object1 = {
-     name:"John",
-     age: 30,
+
+const employee1 = new Employee("Alice", "Developer");
+const employee2 = new Employee("Bob", "Designer");
+
+// Call the introduce method for each instance
+employee1.introduce(); // Output: Hi, I am Alice, a Developer.
+employee2.introduce(); // Output: Hi, I am Bob, a Designer.
+
+// Step 3: Extract the 'introduce' method and fix 'this' using 'bind'
+const introduceStandalone = employee1.introduce;
+introduceStandalone(); // Output: Error or undefined 'this'
+
+const boundIntroduce = employee1.introduce.bind(employee1);
+boundIntroduce(); // Output: Hi, I am Alice, a Developer.
+
+
+// const counter = {
+//     count: 0,
+//     increment: function() {
+//         this.count++;
+//         console.log(`Updated count: ${this.count}`);
+//     }
+// };
+// const boundIncrement = counter.increment.bind(counter);
+// boundIncrement();
+// boundIncrement();
+
+//         // cALL()
+// let nameObj = {
+//     name: "Tony"
+// }
+// let PrintName = {
+//     name: "Rahul",
+//     sayHi: function (age) {
+//         console.log(this.name + " age is " + age);
+//         }
+// }
+// PrintName.sayHi.call(PrintName, 25);
+
+// let Obj1 = {
+//     name:"Rahul"
+// }
+
+// let Obj2 = {
+//     name:"Jhon",
+//    move: function (place){
+//         console.log(this.name + " from " + place );
+//     }
+// }
+// Obj2.move.call(Obj1,"Warangal")
+
+//   // Apply()
+//    let Object1 = {
+//      name:"John",
+//      age: 30,
    
-    nav:function(a,b){
-        console.log(`Hi im ${this.name}! age ${a} i love to make ${b}`)
-       }
-   }
-   let Object2 = {
-    name:"Rahul"
+//     nav:function(a,b){
+//         console.log(`Hi im ${this.name}! age ${a} i love to make ${b}`)
+//        }
+//    }
+//    let Object2 = {
+//     name:"Rahul"
     
-   }
-   console.log(Object1.nav.apply(Object2,[25, "relationships!!"]))
-
-//    Bind
-let inp1 = {
-     name:"John",
-     age: 30,
-   
-    nav:function(a,b){
-        console.log(`Hi im ${this.name}! i have make more than ${a} films, i love to make ${b}`)
-       }
-   }
-   let inp2 = {
-    name:"Rahul"
-    
-   }
-
-   var bounce=inp1.nav.bind(inp2,25,"movies")
+//    }
 //    console.log(Object1.nav.apply(Object2,[25, "relationships!!"]))
-   console.log(bounce())
+
+// //    Bind
+// let inp1 = {
+//      name:"John",
+//      age: 30,
+   
+//     nav:function(a,b){
+//         console.log(`Hi im ${this.name}! i have make more than ${a} films, i love to make ${b}`)
+//        }
+//    }
+//    let inp2 = {
+//     name:"Rahul"
+    
+//    }
+
+//    var bounce=inp1.nav.bind(inp2,25,"movies")
+// //    console.log(Object1.nav.apply(Object2,[25, "relationships!!"]))
+//    console.log(bounce())
+
+
+            // ES6   features
+//             Here are some features of ECMAScript 2015 (ES6) in JavaScript:
+// Arrow functions: A concise way to create functions that automatically capture the surrounding context of a value 
+// Destructuring: A feature that makes it easier to extract values from arrays or properties from objects 
+// Classes: A class syntax for creating objects that makes code more organized and maintainable 
+// Promises: A way to handle the results and errors of asynchronous operations 
+// Spread operator: A feature that gives access to the insides of an iterable object 
+// Rest parameter: A way to represent an indefinite number of arguments as an array 
+// Enhanced object literals: A way to set the prototype at construction, define methods, and more 
+// For/of loop: A statement that loops through the values of iterable objects, such as arrays, strings, and maps 
+// Scoping with “Let” and “Const” keywords: Block level scoping with let, const, and var 
+
 
 
 
